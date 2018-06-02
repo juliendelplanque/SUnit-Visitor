@@ -14,6 +14,16 @@ Trait {
 }
 
 { #category : #visiting }
+TSUnitVisitor >> visitRPackage: aRPackage [
+	"Defines the behaviour while visiting a RPackage.
+	 The default implementation below is to visit all TestCase subclasses in the package.
+	"
+	^ aRPackage definedClasses
+		select: [ :class | (class allSuperclasses includes: TestCase) and: [ class isAbstract not ] ]
+		thenCollect: [ :class | class acceptSUnitVisitor: self ]
+]
+
+{ #category : #visiting }
 TSUnitVisitor >> visitTestCase: aTestCase [
 	"Defines the behaviour while visiting a TestCase.
 	 This method must be overrided by users of this trait.
