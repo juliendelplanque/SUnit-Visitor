@@ -19,7 +19,7 @@ TSUnitVisitor >> visitRPackage: aRPackage [
 	 The default implementation below is to visit all TestCase subclasses in the package.
 	"
 	^ aRPackage definedClasses
-		select: [ :class | (class allSuperclasses includes: TestCase) and: [ class isAbstract not ] ]
+		select: [ :class | (class isTestCase) and: [ class isAbstract not ] ]
 		thenCollect: [ :class | class acceptSUnitVisitor: self ]
 ]
 
