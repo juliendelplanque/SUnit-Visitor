@@ -24,6 +24,15 @@ TSUnitVisitor >> visitRPackage: aRPackage [
 ]
 
 { #category : #visiting }
+TSUnitVisitor >> visitRPackageSet: aRRPackageSet [
+	"Defines the behaviour while visiting a RPackageSet.
+	 The default implementation below is to visit all RPackages contained in the package set.
+	"
+	^ aRRPackageSet packages
+		collect: [ :package | package acceptSUnitVisitor: self ]
+]
+
+{ #category : #visiting }
 TSUnitVisitor >> visitTestCase: aTestCase [
 	"Defines the behaviour while visiting a TestCase.
 	 This method must be overrided by users of this trait.
