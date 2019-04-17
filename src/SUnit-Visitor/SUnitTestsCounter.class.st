@@ -3,9 +3,7 @@ A visitor which count tests in the visitable object provided.
 "
 Class {
 	#name : #SUnitTestsCounter,
-	#superclass : #Object,
-	#traits : 'TSUnitVisitor',
-	#classTraits : 'TSUnitVisitor classTrait',
+	#superclass : #SUnitVisitor,
 	#instVars : [
 		'count'
 	],
