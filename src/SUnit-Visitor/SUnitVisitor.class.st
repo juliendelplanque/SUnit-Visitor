@@ -5,6 +5,11 @@ Class {
 }
 
 { #category : #visiting }
+SUnitVisitor >> visit: anObject [
+	^ anObject acceptSUnitVisitor: self
+]
+
+{ #category : #visiting }
 SUnitVisitor >> visitRPackage: aRPackage [
 	"Defines the behaviour while visiting a RPackage.
 	 The default implementation below is to visit all TestCase subclasses in the package.
