@@ -14,7 +14,7 @@ SUnitTestsCounterTest >> testCountTestsInSUnitVisitorTestsPackage [
 	
 	self assert: visitor count equals: 0.
 	
-	visitor visitRPackage: self class package.
+	visitor visit: self class.
 	
 	self assert: visitor count equals: self class testSelectors size
 ]

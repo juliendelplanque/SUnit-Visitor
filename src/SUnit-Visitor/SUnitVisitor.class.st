@@ -1,3 +1,10 @@
+"
+I  am an abstract visitor for SUnit.
+
+At my level I  just define the API  a SUnit visitor should implement and some parts of the visit that is likely to be common for my concrete subclasses.
+
+My subclasses should at least override #visitTestCase:. See SunitTestsCounter for a simple concrete example
+"
 Class {
 	#name : #SUnitVisitor,
 	#superclass : #Object,

@@ -1,3 +1,6 @@
+"
+I  am a visitor that builds a TestSuite.
+"
 Class {
 	#name : #SUnitSuiteBuilder,
 	#superclass : #SUnitVisitor,
